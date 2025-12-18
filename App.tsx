@@ -48,7 +48,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 print:hidden">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={handleReset}>
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
@@ -137,12 +137,20 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer Disclaimer */}
-      <footer className="mt-20 border-t border-slate-100 py-12 bg-slate-50">
+      <footer className="mt-20 border-t border-slate-100 py-12 bg-slate-50 print:hidden">
         <div className="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm space-y-4">
-          <p className="max-w-2xl mx-auto">
-            Aplikasi ini adalah alat edukasi berbasis kecerdasan buatan. "The Holistic Health Quartet" adalah persona simulasi untuk memberikan perspektif terpadu.
-          </p>
-          <p className="font-bold text-slate-400">© 2024 Holistic Health Quartet - Dewan Kesehatan Holistik Terpadu</p>
+          <div className="max-w-3xl mx-auto space-y-2">
+            <p className="font-semibold text-slate-700">Penting: Disclaimer Akurasi & Medis</p>
+            <p className="leading-relaxed">
+              Aplikasi ini adalah alat edukasi berbasis kecerdasan buatan. Saran yang diberikan merupakan simulasi dari dewan pakar dan tidak boleh dianggap sebagai kebenaran medis mutlak. Akurasi konten tidak dijamin. Selalu lakukan verifikasi dengan tenaga medis profesional sebelum melakukan tindakan medis apapun.
+            </p>
+          </div>
+          <div className="space-y-1 pt-4 border-t border-slate-200">
+            <p className="font-bold text-slate-600">© 2026 Holistic Health Quartet - Dewan Kesehatan Holistik Terpadu</p>
+            <p className="text-slate-400 text-xs mt-2">
+              Application idea by <span className="text-blue-500 font-semibold italic">Sigit Yananto</span>
+            </p>
+          </div>
         </div>
       </footer>
     </div>

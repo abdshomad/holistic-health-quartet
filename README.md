@@ -3,6 +3,8 @@
 
 A specialized health recovery blueprint generator for professionals facing complex metabolic and biomechanical challenges.
 
+**Application idea by Sigit Yananto**
+
 ## The Experts
 - **Dr. Budi Santoso (Internal Medicine/Metabolic)**: Focuses on managing the "Metabolic Storm" (Diabetes & Hypertension).
 - **Dr. Rahmat Hidayat (Spine Surgeon)**: Protects structural integrity from vibration and static sitting trauma.

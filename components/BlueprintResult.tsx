@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { FileText, Download, RotateCcw, ShieldCheck } from 'lucide-react';
+import { Download, RotateCcw, ShieldCheck, AlertTriangle } from 'lucide-react';
 
 interface Props {
   content: string;
@@ -11,6 +11,17 @@ interface Props {
 const BlueprintResult: React.FC<Props> = ({ content, onReset }) => {
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+      {/* Accuracy Disclaimer Box */}
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 flex gap-4 items-start shadow-sm">
+        <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+        <div className="space-y-1">
+          <h3 className="font-bold text-amber-900">Pernyataan Penyangkalan Akurasi & Medis</h3>
+          <p className="text-sm text-amber-800 leading-relaxed">
+            Laporan ini dihasilkan oleh kecerdasan buatan (AI) dan bersifat edukatif. Informasi ini <strong>bukan</strong> diagnosis medis resmi, resep obat, atau pengganti saran dokter. Akurasi data tidak dijamin sepenuhnya benar secara klinis. <strong>Jangan pernah</strong> mengabaikan saran medis profesional atau menunda mencarinya karena sesuatu yang Anda baca di sini.
+          </p>
+        </div>
+      </div>
+
       <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
         <div className="bg-gradient-to-r from-blue-900 to-slate-900 p-8 text-white flex justify-between items-center">
           <div>
@@ -20,7 +31,7 @@ const BlueprintResult: React.FC<Props> = ({ content, onReset }) => {
             </div>
             <p className="text-blue-200/80">Hasil integrasi analisis Holistic Health Quartet</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 print:hidden">
             <button 
               onClick={() => window.print()}
               className="p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors"
@@ -62,9 +73,9 @@ const BlueprintResult: React.FC<Props> = ({ content, onReset }) => {
           </div>
         </div>
 
-        <div className="bg-slate-50 border-t border-slate-200 p-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="bg-slate-50 border-t border-slate-200 p-8 flex flex-col md:flex-row justify-between items-center gap-4 print:hidden">
           <p className="text-sm text-slate-500 italic max-w-md">
-            Laporan ini dihasilkan oleh AI berdasarkan instruksi dewan pakar. Konsultasikan dengan dokter fisik Anda sebelum mengubah pengobatan.
+            Integrasi data ini disusun secara otomatis. Konsultasikan dengan dokter spesialis Anda sebelum melakukan perubahan pada protokol medis yang sedang berjalan.
           </p>
           <button
             onClick={onReset}
