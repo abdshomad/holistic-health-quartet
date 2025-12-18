@@ -17,7 +17,6 @@ export interface Expert {
   experience: string;
   focus: string;
   perspective: string;
-  image: string;
 }
 
 export enum AppState {

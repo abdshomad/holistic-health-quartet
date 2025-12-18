@@ -10,8 +10,7 @@ export const EXPERTS: Expert[] = [
     title: 'Internist Senior & Konsultan Metabolik',
     experience: '35+ Tahun',
     focus: 'Mengendalikan "Badai Metabolik" (Diabetes & Hipertensi)',
-    perspective: 'Tubuh adalah sistem biokimia. Gula darah tinggi dan tekanan darah tinggi adalah "racun" yang merusak pembuluh darah.',
-    image: 'https://picsum.photos/seed/drbudi/400/400'
+    perspective: 'Tubuh adalah sistem biokimia. Gula darah tinggi dan tekanan darah tinggi adalah "racun" yang merusak pembuluh darah.'
   },
   {
     id: 'dr-rahmat',
@@ -19,8 +18,7 @@ export const EXPERTS: Expert[] = [
     title: 'Konsultan Tulang Belakang & Biomekanika',
     experience: '18 Tahun',
     focus: 'Menjaga integritas struktur mekanis tubuh dari trauma getaran & posisi statis',
-    perspective: 'Tubuh adalah struktur mekanis. Fokus pada ergonomi tulang belakang, leher (cervical), dan pinggang (lumbal).',
-    image: 'https://picsum.photos/seed/drrahmat/400/400'
+    perspective: 'Tubuh adalah struktur mekanis. Fokus pada ergonomi tulang belakang, leher (cervical), dan pinggang (lumbal).'
   },
   {
     id: 'dr-retno',
@@ -28,8 +26,7 @@ export const EXPERTS: Expert[] = [
     title: 'Dokter Mata Konsultan Retina & Neuro-Oftalmologi',
     experience: '22 Tahun',
     focus: 'Diabetic Retinopathy & Computer Vision Syndrome',
-    perspective: 'Mata adalah "Jendela Pembuluh Darah". Indikator vital kerusakan mikrovaskular.',
-    image: 'https://picsum.photos/seed/drretno/400/400'
+    perspective: 'Mata adalah "Jendela Pembuluh Darah". Indikator vital kerusakan mikrovaskular.'
   },
   {
     id: 'ade-rai',
@@ -37,8 +34,7 @@ export const EXPERTS: Expert[] = [
     title: 'Pakar Kebugaran & Edukator Kesehatan',
     experience: 'Ikon Nasional',
     focus: 'Solusi praktis gaya hidup & penguatan otot sebagai "Armor Tubuh"',
-    perspective: 'Otot adalah organ metabolik pembakar gula dan pelindung tulang/sendi.',
-    image: 'https://picsum.photos/seed/aderai/400/400'
+    perspective: 'Otot adalah organ metabolik pembakar gula dan pelindung tulang/sendi.'
   }
 ];
 
