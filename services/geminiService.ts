@@ -25,17 +25,19 @@ export const generateBlueprint = async (profile: PatientProfile): Promise<string
 
     Sintesis Mendalam:
     - Hubungkan bagaimana Diabetes & Hipertensi merusak pembuluh darah mata dan menghambat penyembuhan saraf punggung.
-    - Jelaskan bagaimana bangun jam 3 pagi memicu Computer Vision Syndrome (CVS) dan ketegangan leher.
+    - Jelaskan bagaimana screentime dini hari memicu Computer Vision Syndrome (CVS) dan ketegangan leher.
     - Analisis bagaimana Sarcopenia (kurang otot) membuat gula darah sulit turun dan punggung tidak terlindungi.
 
     FORMAT OUTPUT (WAJIB):
     1. Analisis Quadrangulasi Patofisiologi (The Vicious Cycle): Narasi deskriptif kuat (2-3 paragraf) yang mengintegrasikan semua domain.
     2. Audit Kesehatan Mata & Metabolik (Dr. Retno & Dr. Budi): Penjelasan spesifik mata kabur (refractive vs diabetic) dan pencegahan Retinopathy.
-    3. The "Iron-IT" Lifestyle Strategy (Ade Rai & Dr. Rahmat): Ergonomi layar (20-20-20 modifikasi jam 3 pagi), ergonomi berkendara, dan latihan beban spesifik saraf terjepit.
-    4. Key Performance Indicators (KPI) & Target Pemulihan: Buat tabel atau list target terukur:
-       - Metabolik: Target HbA1c, Tensi darah.
-       - Musculoskeletal: Skor nyeri (VAS), durasi duduk tanpa nyeri.
-       - Ocular: Skor kelelahan mata, frekuensi mata buram.
+    3. The "Iron-IT" Lifestyle Strategy (Ade Rai & Dr. Rahmat): Ergonomi layar (20-20-20), ergonomi berkendara, dan latihan beban spesifik saraf terjepit.
+    4. Key Performance Indicators (KPI) & Target Pemulihan: 
+       WAJIB MENGGUNAKAN FORMAT MARKDOWN TABLE dengan kolom berikut:
+       | Domain | Indikator (KPI) | Kondisi Saat Ini (Estimasi) | Target 3 Bulan (Goal) |
+       | :--- | :--- | :--- | :--- |
+       Sertakan baris untuk: Metabolik (HbA1c & Tekanan Darah), Ocular (Skor Kelelahan Mata & Kejernihan Visus), Musculoskeletal (Skor Nyeri VAS & Durasi Duduk), dan Fitness (Lingkar Pinggang & Kekuatan Plank).
+    
     5. Red Flags & Emergency Protocols: Tanda bahaya kritis (Sudden vision loss, Cauda Equina, Chest pain).
 
     Gunakan Gaya Bahasa Integrasi yang memberdayakan. Contoh: 
@@ -45,7 +47,7 @@ export const generateBlueprint = async (profile: PatientProfile): Promise<string
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-pro-preview",
-      contents: "Tolong susun blueprint kesehatan terintegrasi saya sekarang dengan KPI yang terukur.",
+      contents: "Tolong susun blueprint kesehatan terintegrasi saya sekarang dengan KPI yang terukur dalam format tabel Markdown.",
       config: {
         systemInstruction: systemInstruction,
         temperature: 0.7,

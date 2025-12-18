@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Download, RotateCcw, ShieldCheck, AlertTriangle } from 'lucide-react';
 
 interface Props {
@@ -45,6 +46,7 @@ const BlueprintResult: React.FC<Props> = ({ content, onReset }) => {
         <div className="p-8 md:p-12 prose prose-slate max-w-none">
           <div className="text-slate-800 leading-relaxed space-y-6">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
               components={{
                 h1: ({node, ...props}) => <h1 className="text-3xl font-bold text-slate-900 border-b pb-4 mb-8" {...props} />,
                 h2: ({node, ...props}) => <h2 className="text-2xl font-bold text-blue-800 mt-12 mb-6 flex items-center gap-3" {...props} />,
@@ -58,13 +60,13 @@ const BlueprintResult: React.FC<Props> = ({ content, onReset }) => {
                   </li>
                 ),
                 table: ({node, ...props}) => (
-                  <div className="overflow-x-auto my-8">
-                    <table className="min-w-full divide-y divide-slate-200 border border-slate-200 rounded-xl overflow-hidden" {...props} />
+                  <div className="overflow-x-auto my-8 border border-slate-200 rounded-2xl">
+                    <table className="min-w-full divide-y divide-slate-200" {...props} />
                   </div>
                 ),
                 thead: ({node, ...props}) => <thead className="bg-slate-50" {...props} />,
                 th: ({node, ...props}) => <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider" {...props} />,
-                td: ({node, ...props}) => <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 border-t border-slate-100" {...props} />,
+                td: ({node, ...props}) => <td className="px-6 py-4 text-sm text-slate-600 border-t border-slate-100" {...props} />,
                 strong: ({node, ...props}) => <strong className="font-bold text-slate-900" {...props} />,
               }}
             >
