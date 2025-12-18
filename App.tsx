@@ -5,7 +5,8 @@ import { generateBlueprint } from './services/geminiService';
 import ExpertProfile from './components/ExpertProfile';
 import BlueprintForm from './components/BlueprintForm';
 import BlueprintResult from './components/BlueprintResult';
-import { HeartPulse, Loader2, Sparkles, AlertCircle } from 'lucide-react';
+import HeartRateCalculator from './components/HeartRateCalculator';
+import { HeartPulse, Loader2, Sparkles, AlertCircle, Timer } from 'lucide-react';
 
 const INITIAL_PROFILE: PatientProfile = {
   name: 'Tn. XXXXX',
@@ -25,6 +26,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const handleStart = () => setState(AppState.FORM);
+  const handleOpenTool = () => setState(AppState.HEART_RATE_TOOL);
 
   const handleSubmit = async () => {
     setState(AppState.GENERATING);
@@ -59,14 +61,24 @@ const App: React.FC = () => {
               <p className="text-[10px] uppercase font-bold text-blue-600 tracking-widest leading-none">Dewan Kesehatan Terpadu</p>
             </div>
           </div>
-          {state === AppState.RESULT && (
-            <button
-              onClick={handleReset}
-              className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors"
-            >
-              Ubah Data
-            </button>
-          )}
+          <div className="flex items-center gap-4">
+            {state === AppState.WELCOME && (
+              <button
+                onClick={handleOpenTool}
+                className="flex items-center gap-2 text-sm font-bold text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-lg transition-colors"
+              >
+                <Timer className="w-4 h-4" /> Kalkulator Jantung
+              </button>
+            )}
+            {state === AppState.RESULT && (
+              <button
+                onClick={handleReset}
+                className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors"
+              >
+                Ubah Data
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
@@ -90,15 +102,25 @@ const App: React.FC = () => {
               <ExpertProfile />
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button
                 onClick={handleStart}
-                className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-200 bg-blue-600 font-pj rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-xl shadow-blue-200 hover:scale-105 active:scale-95"
+                className="group relative inline-flex items-center justify-center px-10 py-5 font-bold text-white transition-all duration-200 bg-blue-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 shadow-xl shadow-blue-200 hover:scale-105 active:scale-95"
               >
-                Mulai Konsultasi Gratis
+                Mulai Konsultasi Blueprint
+              </button>
+              <button
+                onClick={handleOpenTool}
+                className="inline-flex items-center justify-center px-10 py-5 font-bold text-blue-600 transition-all duration-200 bg-white border-2 border-blue-600 rounded-2xl hover:bg-blue-50 active:scale-95"
+              >
+                Target Heart Rate Tool
               </button>
             </div>
           </div>
+        )}
+
+        {state === AppState.HEART_RATE_TOOL && (
+          <HeartRateCalculator onBack={handleReset} />
         )}
 
         {state === AppState.FORM && (
